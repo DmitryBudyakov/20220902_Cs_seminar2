@@ -6,9 +6,15 @@
 // 918 -> 98
 
 int number = new Random().Next(100, 1000);
-int firstDigit = number / 100;
-int thirdDigit = number % 10;
-int newNumber = 10 * firstDigit + thirdDigit;
+
+int ToTwoDigitsNum(int num)
+{
+    int firstDigit = num / 100;
+    int thirdDigit = num % 10;
+    return 10 * firstDigit + thirdDigit;
+}
+
+// int newNumber = 10 * firstDigit + thirdDigit;
 
 Console.WriteLine(number);
-Console.WriteLine(newNumber);
+Console.WriteLine(ToTwoDigitsNum(number));
