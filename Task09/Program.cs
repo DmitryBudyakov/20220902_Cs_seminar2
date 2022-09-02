@@ -15,9 +15,20 @@ int secondDigit = number % 10;   // находим 2-ю цифру числа
 // else Console.WriteLine($"Наибольшая цифра числа {number} -> {secondDigit}");
 
 // через тернарный оператор
-if (firstDigit == secondDigit) Console.WriteLine("Цифры равны");
-else
+// if (firstDigit == secondDigit) Console.WriteLine("Цифры равны");
+// else
+// {
+//     int max = firstDigit > secondDigit ? firstDigit : secondDigit;
+//     Console.WriteLine($"Наибольшая цифра числа {number} -> {max}");
+// }
+
+int MaxDigit(int num)
 {
-    int max = firstDigit > secondDigit ? firstDigit : secondDigit;
-    Console.WriteLine($"Наибольшая цифра числа {number} -> {max}");
+    int firstDigit = num / 10;   // находим 1-ю цифру числа
+    int secondDigit = num % 10;  // находим 2-ю цифру числа
+    if (firstDigit == secondDigit) return 0; // проверка равенства чисел
+    return firstDigit > secondDigit ? firstDigit : secondDigit; // возвращаем без переменной 
 }
+
+int maxDigit = MaxDigit(number);
+Console.WriteLine($"Наибольшая цифра числа {number} -> {maxDigit}");
