@@ -31,4 +31,5 @@ int MaxDigit(int num)
 }
 
 int maxDigit = MaxDigit(number);
-Console.WriteLine($"Наибольшая цифра числа {number} -> {maxDigit}");
+string result = maxDigit > 0 ? maxDigit.ToString() : "Цифры равны";
+Console.WriteLine($"Наибольшая цифра числа {number} -> {result}");
