@@ -11,12 +11,31 @@ int num1 = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите второе число: ");
 int num2 = Convert.ToInt32(Console.ReadLine());
 
-if (num1 > num2) Console.WriteLine(checkNumbers(num1, num2));
+bool checkNumbers(int nummber1, int number2)
+{
+    return nummber1 % number2 == 0;
+}
+
+if (num1 > num2)
+{
+    bool result = checkNumbers(num1, num2);
+    int ost = num1 % num2;
+
+    if (result) Console.WriteLine("кратно");
+    else Console.WriteLine($"не кратно, остаток {ost}");
+}
 else Console.WriteLine("Введите другие числа");
 
-string checkNumbers(int nummber1, int number2)
-{
-    int ost = nummber1 % number2;
-    return ost == 0 ? "кратно" : $"не кратно, остаток {ost}";
-}
+// string checkNumbers(int nummber1, int number2)
+// {
+//     int ost = nummber1 % number2;
+//     return ost == 0 ? "кратно" : $"не кратно, остаток {ost}";
+// }
+
+
+
+
+
+
+
 
